@@ -30,7 +30,7 @@ public class MainClass {
     }
 
     public static void printList(MyLinkedList<Integer> l) {
-        for (Integer e: l) {
+        for (Integer e : l) {
             System.out.println(e);
         }
     }

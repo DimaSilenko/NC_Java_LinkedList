@@ -15,15 +15,14 @@ public class MyLinkedList<E> implements ILinkedList<E> {
         last = null;
     }
 
-    private Node<E> find (int index) {
+    private Node<E> find(int index) {
         Node<E> curNode;
         if (size / 2 - index >= 0) {
             curNode = first;
             for (int i = 0; i < index; i++) {
                 curNode = curNode.getNextNode();
             }
-        }
-        else {
+        } else {
             curNode = last;
             for (int i = 0; i < (size - 1) - index; i++) {
                 curNode = curNode.getPreviousNode();
@@ -50,8 +49,7 @@ public class MyLinkedList<E> implements ILinkedList<E> {
         if (size == 0) {
             first = new Node<>(element);
             last = first;
-        }
-        else {
+        } else {
             first.setPreviousNode(new Node<>(element, null, first));
             first = first.getPreviousNode();
         }
@@ -125,7 +123,7 @@ public class MyLinkedList<E> implements ILinkedList<E> {
 
     @Override
     public E get(int index) {
-        if(!check(index)) {
+        if (!check(index)) {
             return null;
         }
 
@@ -229,7 +227,7 @@ public class MyLinkedList<E> implements ILinkedList<E> {
     @SuppressWarnings("unchecked")
     public E[] toArray(E[] a) {
         if (a.length < size)
-            a = (E[])java.lang.reflect.Array.newInstance(
+            a = (E[]) java.lang.reflect.Array.newInstance(
                     a.getClass().getComponentType(), size);
 
         Node<E> curNode = first;
